@@ -8,11 +8,13 @@ function initialize() {
   currentPlayer = 0;
   score[0] = 0;
   score[1] = 0;
+  document.querySelector('.dice').classList.add('hidden');
   updateScore();
 }
 initialize();
 
 function processClick() {
+  document.querySelector('.dice').classList.remove('hidden');
   //genetaring random number between 1 to 6
   const diceID = Math.trunc(Math.random() * 6) + 1;
   document.querySelector('.dice').setAttribute('src', `dice-${diceID}.png`);
